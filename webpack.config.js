@@ -3,8 +3,7 @@
 // var CommonsChunkPlugin = require("webpack/lib/optimize/CommonsChunkPlugin");
 // var uglifyJsPlugin = webpack.optimize.UglifyJsPlugin;
 
-var webpack = require('webpack');
-var path = require('path');
+// var webpack = require('webpack');
 var fs = require('fs');
 
 var nodeModules = {};
@@ -13,7 +12,6 @@ fs.readdirSync('node_modules')
 		return ['.bin'].indexOf(x) === -1;
 	})
 	.forEach(function(mod) {
-		console.log( "node_modules/.bin/:", mod ); // DEBUGしてみている
 		nodeModules[mod] = 'commonjs ' + mod;
 	});
 
